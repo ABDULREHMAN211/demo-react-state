@@ -3,26 +3,26 @@ import './ROOM.css';
 function ROOM() {
   //const state = useState(true);
   //console.log("State =",state);
-  let [isLit, setLit] = useState(false);
-  let [Age, setAge] = useState(24);
+    let [isLit, setLit] = useState(false);
+    let [Temperature, setTemperature] = useState(72);
   //let age=45;
   //islit=!islit;
   //age = 67;
   
   return (
     <div className={`room ${isLit? "lit": "dark"}`}>
-      This room is {isLit? "lit": "dark"}
+      This room is: {isLit? "lit": "dark"}
       <br/>
-      Age:{Age}
       <br/>
-      <button onClick={()=> setLit(!isLit) } >Toggle Light</button>
+    Temperature is: {Temperature}
       <br/>
-      <button onClick={ ()=> {
-                        console.log("Increase Age Button clicked");
-                        setAge(++Age);
-                        }}>
-    Increase Age
-    </button>
+      <br/>
+    <button onClick={()=>setTemperature(++Temperature)}>IncTemp</button>
+    <button onClick={()=>setTemperature(--Temperature)}>DecTemp</button>
+      <br/>
+      <br/>
+    <button onClick={()=>setLit(true)}>ON</button>
+    <button onClick={()=>setLit(false)}>OFF</button>
     </div>
   );
       }
